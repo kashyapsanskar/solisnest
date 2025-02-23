@@ -106,7 +106,7 @@ const products=[];
     
     
     let { name, description, price } = req.body;
-    const imagePath = req.file ?  `http://localhost:5001/uploads/${req.file.filename}`: null;
+    const imagePath = req.file ?  `https://solisnest.onrender.com/uploads/${req.file.filename}`: null;
 
     if (!name || !description || !price || !imagePath) {
         return res.status(400).json({ message: "All fields are required" });
