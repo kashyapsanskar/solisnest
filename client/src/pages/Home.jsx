@@ -28,7 +28,7 @@ const Home = () => {
     
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:5001/api/products/public");
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/products/public`);
         const filteredProducts = response.data.filter(product => product && product.uniqueId);
         setProducts(response.data);
       } catch (error) {
@@ -65,7 +65,7 @@ const Home = () => {
             status: "Pending",
         });
 
-        const response = await axios.post("http://localhost:5001/api/orders", {
+        const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/orders`, {
             productUniqueId: [product.uniqueId],
             status: "Pending",
         }, {

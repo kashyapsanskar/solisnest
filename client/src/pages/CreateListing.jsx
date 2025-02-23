@@ -43,7 +43,7 @@ const CreateListing = () => {
     formDataToSend.append("image", image);
 
     try {
-      const response = await axios.post("http://localhost:5001/api/products", formDataToSend, {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/products`, formDataToSend, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data",

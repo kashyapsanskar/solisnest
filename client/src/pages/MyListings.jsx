@@ -17,7 +17,7 @@ const MyListings = () => {
       }
 
       try {
-        const response = await axios.get("http://localhost:5001/api/products", {
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/products`, {
           withCredentials: true,
           headers: { Authorization: `Bearer ${token}` },
         });
@@ -35,7 +35,7 @@ const MyListings = () => {
 
     setDeletingId(id);
     try {
-      await axios.delete(`http://localhost:5001/api/products/${id}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/products/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       setListings((prevListings) => prevListings.filter((listing) => listing.id !== id));
