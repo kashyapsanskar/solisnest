@@ -18,7 +18,9 @@ const cors = require("cors");
 
 app.use(
   cors({
-    origin: 'https://solisnest-new-git-main-sanskar-kashyaps-projects.vercel.app', 
+    // origin: 'https://solisnest-new-git-main-sanskar-kashyaps-projects.vercel.app', 
+    origin: '*',
+
     credentials: true, 
     methods: ["GET", "POST", "PUT", "DELETE"], 
     allowedHeaders: ["Content-Type", "Authorization"], 
